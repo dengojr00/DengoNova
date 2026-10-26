@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja — DengoNova</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ficheiro CSS Separado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 1. Top Bar com Slider -->
+    <div class="top-bar">
+        <div class="top-slider" id="top-slider">
+            <div class="top-slide-item active"><i class="fa-solid fa-truck-fast"></i> Portes Grátis acima de 3.000 MT</div>
+            <div class="top-slide-item"><i class="fa-solid fa-leaf"></i> Garantia de Reembolso de 30 Dias</div>
+            <div class="top-slide-item"><i class="fa-solid fa-star"></i> Excelente Classificação 4.9 de 5</div>
+        </div>
+    </div>
+
+    <!-- 2. Header / Navbar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <button class="icon-btn menu-toggle-btn" id="open-menu" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="logo">
+                <span class="logo-text">DengoNova</span>
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="loja.html" class="active"><i class="fa-solid fa-store"></i> Loja</a>
+            <a href="colecoes.html"><i class="fa-solid fa-layer-group"></i> Coleções</a>
+            <a href="mais-vendidos.html"><i class="fa-solid fa-fire"></i> Mais Vendidos</a>
+        </nav>
+
+        <div class="nav-icons">
+            <button class="icon-btn" aria-label="Pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="icon-btn" aria-label="Perfil"><i class="fa-regular fa-user"></i></button>
+            <button class="icon-btn cart-btn" id="open-cart" aria-label="Carrinho">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 3. Gaveta do Menu Mobile (Off-canvas) -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <aside class="mobile-menu-drawer" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <span class="logo-text">DengoNova</span>
+            </div>
+            <button class="icon-btn" id="close-menu" aria-label="Fechar Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="mobile-nav-links">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="loja.html" class="active"><i class="fa-solid fa-store"></i> Loja</a>
+            <a href="colecoes.html"><i class="fa-solid fa-layer-group"></i> Coleções</a>
+            <a href="mais-vendidos.html"><i class="fa-solid fa-fire"></i> Mais Vendidos</a>
+        </nav>
+    </aside>
+
+    <!-- 4. Conteúdo Específico da Página da Loja -->
+    <main class="page-content reveal">
+        <div class="catalog-header">
+            <h1>Catálogo Completo</h1>
+            <p>Explore todos os produtos disponíveis com entrega em todo Moçambique.</p>
+        </div>
+
+        <!-- Filtros Rápidos -->
+        <div class="filter-bar">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Moda Masculina</button>
+            <button class="filter-btn">Moda Feminina</button>
+            <button class="filter-btn">Calçado</button>
+            <button class="filter-btn">Acessórios</button>
+        </div>
+
+        <!-- Grelha de Produtos (Carregados via JS) -->
+        <div class="products-grid" id="products-grid">
+            <!-- Renderizado dinamicamente pelo script.js -->
+        </div>
+    </main>
+
+    <!-- 5. Notificações Toast -->
+    <div id="toast-container"></div>
+
+    <!-- 6. Footer Escuro -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo footer-logo">
+                    <span class="logo-text">DengoNova</span>
+                </div>
+                <p class="footer-description">
+                    Produtos de alta qualidade concebidos para o seu estilo de vida e conforto diário.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="loja.html">Loja</a></li>
+                    <li><a href="colecoes.html">Coleções</a></li>
+                    <li><a href="mais-vendidos.html">Mais Vendidos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Perguntas Frequentes</a></li>
+                    <li><a href="#">Termos de Envio</a></li>
+                    <li><a href="#">Política de Devolução</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Receba Ofertas</h4>
+                <p>Subscreva para receber descontos exclusivos.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="O seu e-mail" required>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 DengoNova. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Ficheiro JavaScript Separado -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,990 @@
+/* --- RESET E VARIÁVEIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-main: #F8F6F0;
+    --bg-card: #FFFFFF;
+    --primary-green: #1B3B2B;
+    --text-dark: #1F1F1F;
+    --text-muted: #666666;
+    --border-color: #E2DFD7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* --- TOP BAR --- */
+.top-bar {
+    background-color: var(--primary-green);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 15px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.nav-links {
+    display: none; /* Oculto por defeito em mobile para UX limpa */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark, #1F1F1F);
+    margin: 0 12px;
+    font-weight: 500;
+    font-size: 14px;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;                    /* Começa com largura zero (invisível) */
+    height: 2px;                 /* Espessura da linha */
+    background-color: var(--primary-green, #1B3B2B);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1); /* Animação suave a deslizar */
+
+}
+
+/* Quando passas o rato (hover), a linha desliza até 100% da largura */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Quando o link for a página ATIVA, a linha fica fixa a 100% */
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Mantém a cor do texto verde na página ativa */
+.nav-links a.active {
+    color: var(--primary-green, #1B3B2B);
+}
+
+.nav-links a.active {
+    color: var(--primary-green);
+    border-bottom: 2px solid var(--primary-green);
+    padding-bottom: 2px;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    color: var(--text-dark);
+    padding: 5px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    background-color: var(--primary-green);
+    color: white;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 30px 20px;
+    gap: 30px;
+}
+
+.badge {
+    background-color: #EFECE4;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.hero-content h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.highlight {
+    color: var(--primary-green);
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--text-dark);
+    color: var(--text-dark);
+}
+
+.hero-features {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-item i {
+    font-size: 20px;
+    color: var(--primary-green);
+}
+
+.feature-item small {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-green);
+    color: white;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+}
+
+.discount-badge strong {
+    font-size: 16px;
+}
+
+/* --- CATEGORIAS & PRODUTOS --- */
+.categories-section, .products-section {
+    padding: 30px 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+}
+
+.view-all {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.category-card {
+    background-color: var(--bg-card);
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.category-card img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.category-card span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.product-card {
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.product-title {
+    font-size: 13px;
+    margin: 8px 0 4px;
+    font-weight: 500;
+}
+
+.product-price {
+    font-weight: 700;
+    color: var(--primary-green);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.add-cart-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.add-cart-btn:hover {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+/* --- ANIMAÇÕES E REVEAL (UI/UX) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sistema de Toast Flutuante (UX) */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.toast {
+    background-color: var(--primary-green);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 350px;
+    animation: slideUpToast 0.3s ease forwards;
+}
+
+@keyframes slideUpToast {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hide-mobile { display: none; }
+
+/* ==========================================================
+   MEDIA QUERIES PARA TABLET & DESKTOP (Responsividade Avançada)
+   ========================================================== */
+
+/* Tablets (≥ 768px) */
+@media (min-width: 768px) {
+    .hide-mobile { display: block; }
+    .navbar { padding: 20px 40px; }
+    .nav-links { display: flex; }
+    
+    .hero-section {
+        flex-direction: row;
+        padding: 50px 40px;
+        align-items: center;
+    }
+    
+    .hero-content h1 { font-size: 42px; }
+    .hero-img { height: 400px; }
+    
+    .categories-grid { grid-template-columns: repeat(4, 1fr); }
+    .products-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    
+    .category-card img { height: 140px; }
+    .product-card img { height: 180px; }
+    .product-title { font-size: 14px; }
+    
+    .categories-section, .products-section { padding: 40px; }
+    
+    #toast-container {
+        left: auto;
+        right: 30px;
+        bottom: 30px;
+        align-items: flex-end;
+    }
+}
+
+/* Desktops (≥ 1024px) */
+@media (min-width: 1024px) {
+    .navbar { padding: 20px 80px; }
+    .hero-section { padding: 60px 80px; }
+    .categories-section, .products-section { padding: 50px 80px; }
+    .hero-content h1 { font-size: 50px; }
+}
+
+/* ADICIONAR NO FINAL DO TEU STYLE.CSS */
+
+/* --- FOOTER ESCURO --- */
+.site-footer {
+    background-color: #12100F; /* Tom preto/café espresso profundo */
+    color: #E4DCCF;            /* Texto creme/claro para alto contraste */
+    padding-top: 50px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* Em telemóveis: 1 coluna empilhada */
+    gap: 35px;
+}
+
+.footer-logo {
+    color: #FFFFFF !important;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    font-size: 13px;
+    color: #A0988C;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-socials a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background-color: #C28E38; /* Detalhe em bronze no hover */
+    transform: translateY(-3px);
+}
+
+.footer-col h4 {
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #A0988C;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #FFFFFF;
+}
+
+/* Formulário de Newsletter */
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+    font-size: 13px;
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: #7A7267;
+}
+
+.newsletter-form button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    background-color: #C28E38; /* Botão em contraste bronze */
+    color: #12100F;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #D9A043;
+}
+
+/* Direitos de Autor */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #7A7267;
+}
+
+/* --- RESPONSIVIDADE DO FOOTER (Tablets e Desktop) --- */
+@media (min-width: 640px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* Tablet: 2 colunas */
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr; /* Desktop: 4 colunas equilibradas */
+    }
+}
+
+/* ADICIONAR NO FINAL DO TEU STYLE.CSS */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-toggle-btn {
+    display: flex;
+    font-size: 20px;
+}
+
+/* Fundo escuro transparente quando o menu abre */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Gaveta lateral que desliza da esquerda */
+.mobile-menu-drawer {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Começa fora do ecrã */
+    width: 80%;
+    max-width: 300px;
+    height: 100%;
+    background-color: var(--bg-main, #F8F6F0);
+    z-index: 201;
+    padding: 20px;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.15);
+    transition: left 0.35s ease;
+}
+
+.mobile-menu-drawer.active {
+    left: 0; /* Desliza para dentro do ecrã */
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobile-nav-links a {
+    text-decoration: none;
+    color: var(--text-dark, #1F1F1F);
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (min-width: 1200px) {
+    .menu-toggle-btn {
+        display: none; /* Esconde as 3 barras no computador */
+    }
+    .nav-links {
+        display: flex; /* Mostra os links na horizontal */
+    }
+}
+
+/* Slide do top-bar */
+
+.top-bar {
+    background-color: var(--primary-green, #1B3B2B);
+    color: #ffffff;
+    padding: 8px 15px;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 32px; /* Altura fixa para conter o texto em movimento */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-slide-item {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    pointer-events: none;
+}
+
+.top-slide-item.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Em computadores (Desktop ≥ 1024px): Desativamos o slider e mostramos tudo lado a lado */
+@media (min-width: 1024px) {
+    .top-bar {
+        height: auto;
+        justify-content: space-around;
+    }
+
+    .top-slider {
+        display: contents; /* Anula o comportamento de slider no PC */
+    }
+
+    .top-slide-item {
+        position: static;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* 1. Transição suave geral para elementos interactivos */
+a, button, input, .product-card, .category-card {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 2. Efeito de elevação (Hover) elegante nos Cartões de Produtos */
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(18, 16, 15, 0.08);
+    border-color: #C28E38; /* Detalhe em Bronze subtil no hover */
+}
+
+/* 3. Efeito de Zoom subtil nas imagens ao passar o rato */
+.product-card img, .category-card img, .hero-img, .collection-banner-card img {
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img, .category-card:hover img, .collection-banner-card:hover img {
+    transform: scale(1.03);
+}
+
+/* 4. Acabamento visual para os Botões Principais */
+.btn-primary:hover {
+    background-color: #2B543F; /* Tom de verde ligeiramente mais claro no hover */
+    box-shadow: 0 4px 12px rgba(27, 59, 43, 0.2);
+}
+
+.btn-outline:hover {
+    background-color: var(--text-dark, #1F1F1F);
+    color: #FFFFFF;
+}
+
+/* 5. Scrollbar personalizada (Estética moderna) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F8F6F0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D2C9B9;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #C28E38; /* Bronze no hover da barra de scroll */
+}
+
+/* 6. Foco acessível para navegação por teclado (UX Pro) */
+a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid #C28E38;
+    outline-offset: 2px;
+}
+
+/* ==========================================================
+   CSS ESPECÍFICO PARA A PÁGINA DA LOJA (loja.html)
+   ========================================================== */
+
+/* 1. Contentor Principal da Loja */
+.page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 2. Cabeçalho da Loja (Título e Descrição) */
+.catalog-header {
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color, #E2DFD7);
+    padding-bottom: 15px;
+}
+
+.catalog-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-green, #1B3B2B);
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.catalog-header p {
+    color: var(--text-muted, #666666);
+    font-size: 14px;
+}
+
+/* 3. Barra de Categorias e Filtros da Loja */
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 35px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color, #E2DFD7);
+    background-color: var(--bg-card, #FFFFFF);
+    color: var(--text-dark, #1F1F1F);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-green, #1B3B2B);
+    color: var(--primary-green, #1B3B2B);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-green, #1B3B2B);
+    color: #FFFFFF;
+    border-color: var(--primary-green, #1B3B2B);
+    box-shadow: 0 4px 12px rgba(27, 59, 43, 0.15);
+}
+
+/* 4. Grelha de Produtos Específica para a Loja */
+#shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    #shop-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets para melhor proporção */
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #shop-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas em desktops */
+        gap: 24px;
+    }
+}
+
+/* ==========================================================
+   CSS ESPECÍFICO PARA A PÁGINA DE COLEÇÕES (colecoes.html)
+   ========================================================== */
+
+/* 1. Grelha de Banners de Coleções */
+.collections-banner-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Em telemóveis: 1 coluna empilhada */
+    gap: 24px;
+    margin-top: 20px;
+}
+
+/* 2. Cartão de Banner Individual */
+.collection-banner-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 280px;
+    box-shadow: 0 4px 15px rgba(18, 16, 15, 0.08);
+    border: 1px solid var(--border-color, #E2DFD7);
+    background-color: #12100F;
+}
+
+/* 3. Imagem de Fundo do Banner */
+.collection-banner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.85; /* Leve escurecimento para destacar o texto */
+}
+
+/* Efeito de Zoom sofisticado ao passar o rato */
+.collection-banner-card:hover img {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+/* 4. Caixa de Conteúdo Sobreposta */
+.banner-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(18, 16, 15, 0.9) 0%, rgba(18, 16, 15, 0.4) 60%, transparent 100%);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* 5. Categoria/Tag Superior (Ex: "Moda Masculina") */
+.banner-content span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #C28E38; /* Detalhe elegante em Bronze */
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* 6. Título da Coleção */
+.banner-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #FFFFFF;
+    letter-spacing: -0.3px;
+}
+
+/* 7. Botão / Link de Ação dentro do Banner */
+.btn-banner {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.btn-banner i {
+    font-size: 11px;
+    transition: transform 0.2s ease;
+}
+
+/* Animação suave da setinha ao passar o rato */
+.btn-banner:hover {
+    color: #C28E38;
+}
+
+.btn-banner:hover i {
+    transform: translateX(4px);
+}
+
+/* ==========================================================
+   BREAKPOINTS RESPONSIVOS PARA COLEÇÕES
+   ========================================================== */
+
+/* Em Tablets e Desktops (≥ 768px): Coloca os banners lado a lado */
+@media (min-width: 768px) {
+    .collections-banner-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas equilibradas */
+        gap: 30px;
+    }
+    
+    .collection-banner-card {
+        height: 340px; /* Banners mais imponentes em telas maiores */
+    }
+}

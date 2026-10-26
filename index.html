@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DengoNova — Loja Online</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Separado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+    <div class="top-slider" id="top-slider">
+        <div class="top-slide-item active"><i class="fa-solid fa-truck-fast"></i> Portes Grátis acima de 3.000 MT</div>
+        <div class="top-slide-item"><i class="fa-solid fa-leaf"></i> Garantia de Reembolso de 30 Dias</div>
+        <div class="top-slide-item"><i class="fa-solid fa-star"></i> Excelente Classificação 4.9 de 5</div>
+    </div>
+</div>
+
+    <!-- Header / Navbar -->
+<header class="navbar">
+    <div class="nav-left">
+        <!-- 1. Adicionamos o botão de 3 barras (visível no telemóvel/tablet) -->
+        <button class="icon-btn menu-toggle-btn" id="open-menu" aria-label="Abrir Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="logo">
+            <!--<span class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></span>-->
+            <span class="logo-text">DengoNova</span>
+        </div>
+    </div>
+
+    <!-- Links do menu horizontal para computador -->
+    <nav class="nav-links">
+        <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Início</a>
+        <a href="loja.html"><i class="fa-solid fa-store"></i> Loja</a>
+        <a href="colecoes.html"><i class="fa-solid fa-layer-group"></i> Coleções</a>
+        <a href="mais-vendidos.html"><i class="fa-solid fa-fire"></i> Mais Vendidos</a>
+    </nav>
+
+    <!-- Ícones da direita (Perfil e Carrinho agora sempre visíveis) -->
+    <div class="nav-icons">
+        <button class="icon-btn" aria-label="Pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="icon-btn" aria-label="Perfil"><i class="fa-regular fa-user"></i></button>
+        <button class="icon-btn cart-btn" id="open-cart" aria-label="Carrinho">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+    </div>
+</header>
+
+<!-- ADICIONAR LOGO AINDA ABAIXO DO </header> -->
+<div class="menu-overlay" id="menu-overlay"></div>
+<aside class="mobile-menu-drawer" id="mobile-menu">
+    <div class="mobile-menu-header">
+        <div class="logo">
+            <span class="logo-text">DengoNova</span>
+        </div>
+        <button class="icon-btn" id="close-menu" aria-label="Fechar Menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+        <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Início</a>
+        <a href="loja.html"><i class="fa-solid fa-store"></i> Loja</a>
+        <a href="colecoes.html"><i class="fa-solid fa-layer-group"></i> Coleções</a>
+        <a href="mais-vendidos.html"><i class="fa-solid fa-fire"></i> Mais Vendidos</a>
+    </nav>
+</aside>
+
+    <!-- Hero Section -->
+    <section class="hero-section reveal">
+        <div class="hero-content">
+            <span class="badge">⭐ NOVA COLEÇÃO</span>
+            <h1>Eleve o seu Estilo com <span class="highlight">Produtos Premium</span></h1>
+            <p>Descubra peças cuidadosamente selecionadas para garantir qualidade, estilo e o máximo conforto no seu dia a dia.</p>
+
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Comprar Agora <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="btn btn-outline">Explorar</button>
+            </div>
+
+            <div class="hero-features">
+                <div class="feature-item">
+                    <i class="fa-solid fa-truck"></i>
+                    <div>
+                        <strong>Entrega Rápida</strong>
+                        <small>Em todo Moçambique</small>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <div>
+                        <strong>Devolução Fácil</strong>
+                        <small>Garantia de 30 dias</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1000&q=80" alt="Mochila Premium" class="hero-img">
+            <div class="discount-badge">
+                <span>ATÉ</span>
+                <strong>30%</strong>
+                <small>DESC</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorias -->
+    <section class="categories-section reveal">
+        <div class="section-header">
+            <h2>Comprar por Categoria</h2>
+            <a href="colecoes.html" class="view-all">Ver todas <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card" data-category="Moda Masculina" onclick="window.location.href='index.html'">
+                <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=300&q=80" alt="Homem">
+                <span>Moda Masculina</span>
+            </div>
+            <div class="category-card" data-category="Moda Feminina" onclick="window.location.href='index.html'">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=300&q=80" alt="Mulher">
+                <span>Moda Feminina</span>
+            </div>
+            <div class="category-card" data-category="Calçado" onclick="window.location.href='index.html'">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=300&q=80" alt="Calçado">
+                <span>Calçado</span>
+            </div>
+            <div class="category-card" data-category="Acessórios" onclick="window.location.href='index.html'">
+                <img src="relogio.jpg" alt="Beleza">
+                <span>Beleza & Acessórios</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos em Tendência -->
+    <section class="products-section reveal">
+        <div class="section-header">
+            <h2>Produtos em Tendência</h2>
+            <a href="mais-vendidos.html" class="view-all">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Gerado via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Notificações Toast UX -->
+    <div id="toast-container"></div>
+
+    <!-- JS Separado -->
+    <script src="script.js"></script>
+
+    <!-- ADICIONAR NO INDEX.HTML ANTES DO SCRIPT.JS -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- Coluna 1: Sobre a Loja -->
+        <div class="footer-col">
+            <div class="logo footer-logo">
+                <span class="logo-text">DengoNova</span>
+            </div>
+            <p class="footer-description">
+                Produtos de alta qualidade concebidos para o seu estilo de vida e conforto diário.
+            </p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Links Rápidos -->
+        <div class="footer-col">
+            <h4>Navegação</h4>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="colecoes.html">Coleções</a></li>
+                <li><a href="mais-vendidos.html">Mais Vendidos</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 3: Apoio ao Cliente -->
+        <div class="footer-col">
+            <h4>Suporte</h4>
+            <ul>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Perguntas Frequentes</a></li>
+                <li><a href="#">Termos de Envio</a></li>
+                <li><a href="#">Política de Devolução</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 4: Newsletter -->
+        <div class="footer-col">
+            <h4>Receba Ofertas</h4>
+            <p>Subscreva para receber descontos exclusivos.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" placeholder="O seu e-mail" required>
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Linha Inferior de Copyright -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 DengoNova. Todos os direitos reservados.</p>
+    </div>
+</footer>
+</body>
+</html>
