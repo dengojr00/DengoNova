@@ -19,7 +19,7 @@ const products = [
         name: "Relógio Clássico Castanho",
         price: 8200.00,
         category: "Acessórios",
-        image: "relogio.jpg"
+        image: "assets/relogio.jpg"
     },
     {
         id: 4,
